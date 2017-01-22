@@ -1,6 +1,6 @@
 # vigorLine
 
-A dynamic line that is commonly used in the interaction of the web head
+A dynamic line that is commonly used in the interaction of the web Navigation
 
 ```js
 var vigorLine = new vigorLine(selector,options);
@@ -16,7 +16,7 @@ menu selector.
 
 `height`*(optional)* :   height of line,default `'0.125em'`.
 
-`initPageIndex`*(optional)* :   first position index,default `0`.
+`initPageIndex`*(optional)* :   first position,default `0`.
 
 `activeClass`*(optional)* :   active state with line
 
