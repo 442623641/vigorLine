@@ -1,5 +1,6 @@
 /*! vigorline v1.0.0 ~ (c) 2016 LeoZhang */
 (function(window,document) {
+  
   bind = function(fn, me){ 
     return function(){ 
       return fn.apply(me, arguments); 
