@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=10, user-scalable=none" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=10, user-scalable=no" />
   <script src="vigorLine.js"></script>
   <style>
     body {
@@ -65,7 +65,7 @@
       margin: 0;
       padding: 0;
       list-style-type: none;
-      max-width: 960px;
+      width: 100%;
       min-width: 320px;
       font-size: calc(.75em + .75vw);
       position: relative;
@@ -80,8 +80,10 @@
       justify-content: space-between;
       height: 2.75em;
       line-height: 2.75em;
+      
     }
-    .menu a {
+    
+    .menu span {
       display: block;
       color: inherit;
       text-decoration: none;
@@ -90,12 +92,20 @@
     }
 
     .menu .menu-item {
+
       width: auto !important;
       display: inline-block !important;
       margin: 0 .5em;
     }
 
-    .menu .menu-item a {
+    @media screen and (min-width:480px){
+       .menu .menu-item:hover {
+        cursor: pointer;
+        opacity: .5;
+      }
+    }
+    .
+    .menu .menu-item span {
       padding-bottom: 0.25em;
       border-bottom: 0.125em solid transparent;
     }
@@ -106,20 +116,20 @@
   <nav id='nav'>
     <h1>vigorLine</h1>
     <ul class='menu'>
-      <li class='menu-item' onclick="slide(0);">
-        <a >Home</a>
+      <li class='menu-item'>
+        <span>Home</span>
       </li>
-      <li class='menu-item' onclick="slide(1);">
-        <a >Photo gallery</a>
+      <li class='menu-item'>
+        <span>Photo gallery</span>
       </li>
-      <li class='menu-item' onclick="slide(2);">
-        <a >About</a>
+      <li class='menu-item'>
+        <span>About</span>
       </li>
-      <li class='menu-item' onclick="slide(3);">
-        <a >Blog</a>
+      <li class='menu-item'>
+        <span>Blog</span>
       </li>
-      <li class='menu-item' onclick="slide(4);">
-        <a >Contact</a>
+      <li class='menu-item'>
+        <span>Contact</span>
       </li>
     </ul>
   </nav>
@@ -142,10 +152,11 @@
       </div>
     </div>
   </div>
-  <script type="text/javascript">    
-    var vigorLine = new vigorLine('.menu',{target:'a',height:'3px'});
-    function slide(index){
-      document.querySelector('.slide-box').style.transform="translateX( " + -(index)*100 + "vw )";
+  <script type="text/javascript">  
+    var slideBox=document.querySelector('.slide-box');  
+    var vigorLine = new vigorLine('.menu',{target:'.menu-item', height:'3px'});
+    vigorLine.onclick=function(ele,e){
+        slideBox.style.transform= slideBox.style.webKitTransform="translateX( " + -(ele.index)*100 + "vw )";
     }
 
   </script>
