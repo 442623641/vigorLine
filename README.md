@@ -7,7 +7,7 @@ A dynamic line that is commonly used in the interaction of the web Navigation
 var vigorLine = new vigorLine(selector,options);
 vigorLine.onclick=function(element,e){
 	console.log(element);
-	///todo
+	///todo 
 	///...
 }
 ```
